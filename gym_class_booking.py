@@ -29,6 +29,15 @@ browser.get('https://www.thegymgroup.com/classes/')
 cityElem = browser.find_element_by_partial_link_text('Sheffield')
 cityElem.click()
 
+''' Select the xpath for desired class by Day of Week and Class of Day ''''
+# TODO: Day of Week and Class of Day to be specified as a number.
+DoW = 1 # 1 = today.
+CoD = 5 # 5 = class 5 of the day.
+classSelect = browser.find_element_by_xpath('//*[@id="content"]/div/div/div/div[2]/div/div/div/div[2]/div/div/div/table/tbody/tr/td[' + str(DoW) + ']/a[' + str(CoD) + ']/div/div[1]/p')
+classSelect.click()
+
+print('Completed successfully.')
+
 # if __name__ == "__main__":
 #     # execute only if run as a script
 #     main()
